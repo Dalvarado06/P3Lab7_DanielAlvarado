@@ -246,6 +246,8 @@ int main(int argc, char** argv) {
                                         texto = texto.substr(indice+2);
                                     }
                                     
+                                    cout << mensaje << endl;
+                                    cout << texto << endl;
                                     
                                     int rotaciones = logedIn.getEncrypt();
                                     string message = "";
@@ -506,7 +508,7 @@ string decypher(string texto, int rotaciones, string result) {
 
             string toCypher = parsedText.at(i);
 
-            if (i != 0 || i % 2 != 0) {
+            if (i != 0 || (i % 2) != 0) {
 
                 //front cesar
                 string resultCypher = "";
