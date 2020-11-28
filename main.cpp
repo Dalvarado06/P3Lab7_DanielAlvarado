@@ -188,7 +188,7 @@ int main(int argc, char** argv) {
 
                                     int cypher = listaPersonas[indice].getEncrypt();
                                     
-                                    cout << cypher << endl;
+                                  
                                     
                                     texto = encryptar(texto, cypher, "");
 
@@ -235,7 +235,6 @@ int main(int argc, char** argv) {
 
                                     string mensaje, texto;
                                     
-                                    cout << "agarrando mensaje" << endl;
                                     texto = logedIn.getMensajes().at(index);
 
                                     
@@ -247,13 +246,13 @@ int main(int argc, char** argv) {
                                         texto = texto.substr(indice+2);
                                     }
                                     
-                                    cout << texto << endl;
                                     
                                     int rotaciones = logedIn.getEncrypt();
+                                    string message = "";
                                     
-                                    texto = decypher(texto, rotaciones, "");
+                                    message = decypher(texto, rotaciones, "");
 
-                                    cout << "El texto es: " << mensaje << " "
+                                    cout << "El texto es: " << message << " "
                                             << texto << endl << endl;
 
                                 }
@@ -461,7 +460,7 @@ string encryptar(string texto, int rotaciones, string result) {
 }
 
 string decypher(string texto, int rotaciones, string result) {
-
+    //caso base
     if (rotaciones == 0) {
         result = texto;
 
@@ -507,7 +506,7 @@ string decypher(string texto, int rotaciones, string result) {
 
             string toCypher = parsedText.at(i);
 
-            if (i != 0 && i % 2 != 0) {
+            if (i != 0 || i % 2 != 0) {
 
                 //front cesar
                 string resultCypher = "";
