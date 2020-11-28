@@ -52,7 +52,13 @@ public:
     
     void setPassword(string);
     
+    void setEncrypt(int);
+    
+    void setMensajes(vector<string>);
+    
     void operator=(const Persona& orig);
+    
+    void addMensaje(string);
     
 private:
     

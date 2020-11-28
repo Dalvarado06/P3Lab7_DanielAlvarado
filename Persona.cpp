@@ -100,3 +100,28 @@ void Persona::operator=(const Persona& orig) {
     }
 
 }
+
+void Persona::setEncrypt(int encrypt){
+    this->encrypt = encrypt;
+}
+
+void Persona::setMensajes(vector<string> textos){
+    
+    for(int i = 0; i < textos.size(); i++){
+        
+        string texto = textos[i];
+        
+        mensajes.push_back(texto);
+    }
+}
+
+vector<string> Persona::getMensajes(){
+    
+    return mensajes;
+}
+
+void Persona::addMensaje(string mensaje){
+    
+    mensajes.push_back(mensaje);
+    
+}
